@@ -4,7 +4,7 @@ This experimental project will deepen the experience in Python, FastAPI, RabbitM
 
 > The project will change and evolve.
 
-# High Level Communication Flow
+# High Level Data Flow
 
 1. Comment Submission: A comment is submitted to FastAPI, which publishes it to RabbitMQ.
 1. Message Queueing: RabbitMQ stores the comment in `queue_name` variable.
