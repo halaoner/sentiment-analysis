@@ -6,11 +6,13 @@ This experimental project will deepen the experience in Python, FastAPI, RabbitM
 
 # High Level Data Flow
 
-1. Comment Submission: A comment is submitted to FastAPI, which publishes it to RabbitMQ.
-1. Message Queueing: RabbitMQ stores the comment in `queue_name` variable.
-1. Message Processing: The `receive.py` script fetches each comment, performs `sentiment analysis`, and prints the result.
+<!-- 1. Comment Submission: A comment is submitted to FastAPI endpoint, which publishes it to RabbitMQ.
+1. Message Queueing: RabbitMQ stores the comment in the queue.
+1. Message Processing: The `receive.py` component fetches each comment, performs `sentiment analysis`, and prints the result. -->
 
-Client (e.g., browser) sends HTTP request --> HTTP request is sent to FastAPI endpoint --> Publish the message in to a queue --> Consume the message from the queue --> perform the sentiment analysis --> Print the result of sentiment analysis in stdout
+1. The client (e.g., browser) submits a comment to the FastAPI endpoint, which publishes it to the RabbitMQ queue.
+1. RabbitMQ stores the comment in the queue.
+1. The consumer (`receive.py`) dispatches the comment, performs `sentiment analysis`, and prints the result in `stdout`.
 
 # Getting Started
 
@@ -40,13 +42,13 @@ fastapi dev
 
 2. Call FastAPI endpoint
 
-| Endpoint              | HTTP Request Method     |
+| HTTP Endpoint         | HTTP Request Method     |
 |-----------------------|-------------------------|
 | `/submit-review"`     | POST                    |
 | `/`                   | GET                     |
 
 
-Example:
+Example of HTTP request:
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/submit-review" -H "Content-Type: application/json" -d '{"text": "I hate this product!"}'
