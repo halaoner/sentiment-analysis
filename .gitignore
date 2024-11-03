@@ -1,0 +1,5 @@
+# Python specific
+__pycache__/
+
+# Other assets
+comments.json
