@@ -7,7 +7,7 @@ This experimental project will deepen the experience in Python, FastAPI, RabbitM
 # High Level Communication Flow
 
 1. Comment Submission: A comment is submitted to FastAPI, which publishes it to RabbitMQ.
-1. Message Queueing: RabbitMQ stores the comment in `queue_name` varible.
+1. Message Queueing: RabbitMQ stores the comment in `queue_name` variable.
 1. Message Processing: The `receive.py` script fetches each comment, performs `sentiment analysis`, and prints the result.
 
 Client (e.g., browser) sends HTTP request --> HTTP request is sent to FastAPI endpoint --> Publish the message in to a queue --> Consume the message from the queue --> perform the sentiment analysis --> Print the result of sentiment analysis in stdout
