@@ -44,7 +44,7 @@ fastapi dev
 
 | HTTP Endpoint         | HTTP Request Method     |
 |-----------------------|-------------------------|
-| `/submit-review"`     | POST                    |
+| `/submit-review `     | POST                    |
 | `/`                   | GET                     |
 
 
@@ -57,7 +57,7 @@ curl -X POST "http://127.0.0.1:8000/submit-review" -H "Content-Type: application
 Expected output:
 
 ```bash
-{"message":"Comment saved successfully!","comment":"I hate this product!"}
+{"message":"Comment submitted successfully!"}
 ```
 
 # Sentiment Analysis Explained
